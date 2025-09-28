@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ExamContext } from '../context/ExamContext';
+import { API_BASE_URL } from '../config';
 import '../styles/MarksDisplay.css';
 
 const MarksDisplay = () => {
@@ -43,7 +44,7 @@ useEffect(() => {
   const fetchEvaluation = async () => {
     try {
       setIsLoading(true);
-      const res = await fetch('http://localhost:5000/api/evaluate', {
+      const res = await fetch(`${API_BASE_URL}/api/evaluate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

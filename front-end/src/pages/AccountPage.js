@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 import '../styles/AccountPage.css';
 
 const AccountPage = () => {
@@ -23,7 +24,7 @@ const AccountPage = () => {
     const nameFromEmail = email.split('@')[0].replace('.', ' ');
     setFacultyName(nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1));
 
-    fetch(`http://localhost:5000/api/answers/history/by-faculty?facultyEmail=${email}`)
+    fetch(`${API_BASE_URL}/api/answers/history/by-faculty?facultyEmail=${email}`)
       .then((res) => res.json())
       .then((data) => setUploads(data.uploads || []))
       .catch((err) => console.error('Error fetching uploads:', err));

@@ -2,6 +2,7 @@
 import React, { useState, useRef, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ExamContext } from '../context/ExamContext';
+import { API_BASE_URL } from '../config';
 import '../styles/UploadScript.css';
 
 const UploadScript = () => {
@@ -71,7 +72,7 @@ const UploadScript = () => {
 
 
     try {
-      const response = await fetch('http://localhost:5000/api/upload', {
+      const response = await fetch(`${API_BASE_URL}/api/upload`, {
         method: 'POST',
         body: formData
       });

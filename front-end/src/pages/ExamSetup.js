@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ExamContext } from '../context/ExamContext';
 import '../styles/ExamSetup.css';
+import { API_BASE_URL } from '../config';
 import { label } from 'framer-motion/client';
 
 const ExamSetup = () => {
@@ -83,7 +84,7 @@ const ExamSetup = () => {
     try {
       setLoading(true);
 
-      const res = await fetch('http://localhost:5000/api/exam/create', {
+      const res = await fetch(`${API_BASE_URL}/api/exam/create`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
