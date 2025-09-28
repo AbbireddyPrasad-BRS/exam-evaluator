@@ -173,9 +173,9 @@ if (!GROQ_API_KEY) {
 const groq = new Groq({ apiKey: GROQ_API_KEY });
 
 // --- Fallback functions (assuming these exist elsewhere in your original code) ---
-// Note: These functions must be defined for the fallback logic to work.
-const getRandomMarks = (max) => Math.floor(Math.random() * (max + 1));
-const getRandomFeedback = () => "Evaluation failed: The API call to the LLM failed, and a temporary fallback mark and feedback were assigned.";
+// // Note: These functions must be defined for the fallback logic to work.
+// const getRandomMarks = (max) => Math.floor(Math.random() * (max + 1));
+// const getRandomFeedback = () => "Evaluation failed: The API call to the LLM failed, and a temporary fallback mark and feedback were assigned.";
 // -------------------------------------------------------------------------------
 
 exports.evaluateAnswers = async (req, res) => {
