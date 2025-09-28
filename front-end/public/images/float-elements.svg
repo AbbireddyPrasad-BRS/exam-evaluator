@@ -1,0 +1,34 @@
+<svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="background: black;">
+  <style>
+    .digit {
+      font-family: 'Courier New', monospace;
+      font-size: 20px;
+      fill: #00ffcc;
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(700px); opacity: 0; }
+    }
+
+    .d1 { animation-delay: 0s; }
+    .d2 { animation-delay: 0.5s; }
+    .d3 { animation-delay: 1s; }
+    .d4 { animation-delay: 1.5s; }
+    .d5 { animation-delay: 2s; }
+    .d6 { animation-delay: 2.5s; }
+    .d7 { animation-delay: 3s; }
+    .d8 { animation-delay: 3.5s; }
+  </style>
+
+  <text x="50" y="0" class="digit d1">1</text>
+  <text x="100" y="0" class="digit d2">0</text>
+  <text x="150" y="0" class="digit d3">1</text>
+  <text x="200" y="0" class="digit d4">0</text>
+  <text x="250" y="0" class="digit d5">1</text>
+  <text x="300" y="0" class="digit d6">0</text>
+  <text x="350" y="0" class="digit d7">1</text>
+  <text x="400" y="0" class="digit d8">0</text>
+</svg>

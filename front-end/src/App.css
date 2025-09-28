@@ -1,0 +1,12 @@
+
+/* App.css */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+main {
+  flex: 1;
+}

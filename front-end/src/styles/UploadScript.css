@@ -1,0 +1,320 @@
+/* Background & Layout */
+.upload-container {
+  background: url('/public/images/bg-upload.jpg') center/cover no-repeat,
+              linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 40px;
+  animation: backgroundPulse 20s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #00ffe1;
+  background-blend-mode: multiply;
+}
+
+/* Shared Header */
+.landing-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-shadow: 0 0 10px #00f0ff;
+  animation: fadeInDown 1s ease;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  animation: fadeInDown 1s ease;
+}
+
+.nav-links ul li {
+  cursor: pointer;
+  font-weight: 600;
+  color: #00bfff;
+  transition: color 0.3s ease;
+}
+
+.nav-links ul li:hover {
+  color: #ffa500;
+  text-shadow: 0 0 8px #00fff7;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Heading Styles */
+.main-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 0 8px #0077ff;
+  animation: fadeInUp 1s ease;
+}
+h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  color: #002fff;
+  text-shadow: 0 0 8px #000000;
+  text-transform:capitalize;
+}
+
+.upload-title {
+  font-size: 1.3rem;
+  color: #00d9ff;
+  text-shadow: 0 0 5px #00aaff;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Form Fields */
+.student-roll-number,
+.student-name {
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.student-roll-number label,
+.student-name label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 0 0 6px rgba(0, 191, 255, 0.4);
+  outline: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Glow Effect on Focus */
+input[type="text"]:focus {
+  box-shadow: 0 0 10px #00ffd0;
+  outline: none;
+}
+
+/* Dropzone */
+.dropzone {
+  width: 90%;
+  max-width: 600px;
+  height: 150px;
+  border: 2px dashed #00ffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00d9ff;
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.dropzone.dragging {
+  border-color: #ddff00;
+  background-color: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 12px #ccff00;
+}
+
+.dropzone.active {
+  border-color: #00ff15;
+  box-shadow: 0 0 12px #00ff2a;
+}
+
+.file-input {
+  display: none;
+}
+
+/* File Controls */
+.file-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.file-controls button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cancel {
+  background-color: #ff00001f;
+  color: white;
+  box-shadow: 0 0 10px #ff4444;
+  margin-right: 10px;
+}
+
+.cancel:hover {
+  background-color: #ff0000;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px #ff4444;
+}
+
+.view {
+  background-color: #00fbff1d;
+  margin-left: 20px;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px #00bfff;
+}
+
+.view:hover {
+  background-color: #0099cc;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+/* Submit Button */
+.submit {
+  background-color: #027e06;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.submit:hover {
+  background-color: #00ff00;
+  box-shadow: 0 0 10px #80ff00;
+}
+
+/* Popup Alert */
+.popup-alert {
+  margin-top: 10px;
+  color: #00ff88;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes backgroundPulse {
+  0%, 100% {
+    background-position: center;
+  }
+  50% {
+    background-position: top center;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px 0 0 12px;
+    padding: 1rem 2rem;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: right;
+  }
+
+  .nav-links ul li {
+    font-size: 1.1rem;
+  }
+}

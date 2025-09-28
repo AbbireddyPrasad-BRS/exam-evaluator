@@ -1,0 +1,260 @@
+/* Background and Base */
+.account-page-container {
+  background: url('/public/images/bg-account.jpg') center/cover no-repeat,
+              linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+  background-size: cover;
+  background-blend-mode: multiply;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #00ffe1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: backgroundPulse 20s ease-in-out infinite;
+}
+
+/* Header */
+.landing-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-shadow: 0 0 10px #00f0ff;
+  animation: fadeInDown 1s ease;
+}
+
+/* Navigation Links */
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li {
+  cursor: pointer;
+  font-weight: 600;
+  color: #00bfff;
+  transition: color 0.3s ease;
+}
+
+.nav-links ul li:hover {
+  color: #ffa500;
+  text-shadow: 0 0 8px #00fff7;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Page Headings */
+.main-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 0 8px #0077ff;
+  text-transform: capitalize;
+  animation: fadeInUp 1s ease;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #00d9ff;
+  margin-top: 30px;
+  text-shadow: 0 0 6px #00aaff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Faculty Bar */
+.faculty-bar {
+  background-color: rgba(0, 0, 0, 0.14);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size:  1.2rem;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.527);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Table Styles */
+table {
+  width: 90%;
+  max-width: 1100px;
+  margin-top: 10px;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.05);
+  animation: fadeIn 1s ease-in-out;
+}
+
+th, td {
+  border: 1px solid rgb(0, 255, 255);
+  padding: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #00ffff;
+  text-shadow: 0 0 5px #00d9ff;
+}
+
+tr:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Expanded Answer Box */
+td[colspan="6"] {
+  background-color: rgba(255, 255, 255, 0.02);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Answer Details Styling */
+td[colspan="6"] h4 {
+  margin-bottom: 10px;
+}
+
+td[colspan="6"] p {
+  margin: 5px 0;
+  color: #c6f8ff;
+}
+
+td[colspan="6"] strong {
+  color: #00ffff;
+}
+
+/* Logout Button */
+.logout-container {
+  margin-top: 30px;
+}
+
+.logout-button {
+  background-color: #ff0000;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c10000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px 0 0 12px;
+    padding: 1rem 2rem;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: right;
+  }
+
+}
+
+.future-scope{
+    position: relative;
+    padding: 20px;
+    color: rgb(255, 111, 0);
+    text-shadow: 0 0 20px red;
+    text-align: center;
+    
+}
+
+/* Animations */
+@keyframes backgroundPulse {
+  0%, 100% {
+    background-position: center;
+  }
+  50% {
+    background-position: top center;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

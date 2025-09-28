@@ -1,0 +1,31 @@
+# --------------------
+# Dependencies
+# --------------------
+node_modules
+/backend/node_modules
+/frontend/node_modules
+
+# --------------------
+# Environments & Secrets (CRITICAL)
+# --------------------
+# Ignore actual secret files everywhere
+.env
+.env.local
+.env.*
+
+# --------------------
+# Build & Output Artifacts
+# --------------------
+# Backend compiled/log files
+npm-debug.log
+yarn-error.log
+*.log
+
+# Frontend build directory (Vercel/Netlify output)
+/frontend/dist
+/frontend/build
+
+# IDE/System Files
+.vscode/
+.idea/
+.DS_Store
